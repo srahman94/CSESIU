@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_notice"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Notice" />
+        <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Blog" />
+        <item
+            android:id="@+id/nav_event"
+            android:icon="@drawable/ic_menu_event"
+            android:title="Event" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_result"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Result" />
+        <item
+            android:id="@+id/nav_routine"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Routine" />
+        <item
+            android:id="@+id/nav_members"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Members" />
+
+</menu>
