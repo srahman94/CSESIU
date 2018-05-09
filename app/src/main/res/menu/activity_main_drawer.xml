@@ -9,11 +9,11 @@
             android:title="Home" />
         <item
             android:id="@+id/nav_notice"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_notice"
             android:title="Notice" />
         <item
             android:id="@+id/nav_blog"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_blog"
             android:title="Blog" />
         <item
             android:id="@+id/nav_event"
@@ -21,19 +21,19 @@
             android:title="Event" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_gallery"
             android:title="Gallery" />
         <item
             android:id="@+id/nav_result"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_result"
             android:title="Result" />
         <item
             android:id="@+id/nav_routine"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_routine"
             android:title="Routine" />
         <item
             android:id="@+id/nav_members"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_members"
             android:title="Members" />
 
 </menu>

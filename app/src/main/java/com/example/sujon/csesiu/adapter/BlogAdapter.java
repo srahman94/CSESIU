@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.sujon.csesiu.R;
-import com.example.sujon.csesiu.controller.EventController;
-import com.example.sujon.csesiu.model.EventModel;
+import com.example.sujon.csesiu.controller.Controller;
+import com.example.sujon.csesiu.model.DatatModel;
 
 import java.util.List;
 
@@ -24,10 +24,10 @@ public class BlogAdapter extends BaseAdapter{
 
     private Activity activity;
     private LayoutInflater inflater;
-    private List<EventModel> blogItems;
-    ImageLoader imageLoader = EventController.getInstance().getImageLoader();
+    private List<DatatModel> blogItems;
+    ImageLoader imageLoader = Controller.getInstance().getImageLoader();
 
-    public BlogAdapter(Activity activity, List<EventModel> blogItems) {
+    public BlogAdapter(Activity activity, List<DatatModel> blogItems) {
         this.activity = activity;
         this.blogItems = blogItems;
     }
@@ -55,7 +55,7 @@ public class BlogAdapter extends BaseAdapter{
         if (convertView == null)
             convertView = inflater.inflate(R.layout.blogs_list, null);
         if (imageLoader == null)
-            imageLoader = EventController.getInstance().getImageLoader();
+            imageLoader = Controller.getInstance().getImageLoader();
         NetworkImageView blogImg = (NetworkImageView) convertView
                 .findViewById(R.id.blogs_img);
         TextView blogTitle = (TextView) convertView.findViewById(R.id.blogs_title);
@@ -63,7 +63,7 @@ public class BlogAdapter extends BaseAdapter{
         TextView blogDate = (TextView) convertView.findViewById(R.id.blogs_date);
 
         // getting movie data for the row
-        EventModel em = blogItems.get(position);
+        DatatModel em = blogItems.get(position);
 
         blogImg.setImageUrl(em.getEventImgUrl(), imageLoader);
         blogTitle.setText(em.getEventTitle());

@@ -2,7 +2,6 @@ package com.example.sujon.csesiu.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Movie;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +11,8 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.sujon.csesiu.R;
-import com.example.sujon.csesiu.activityes.Event;
-import com.example.sujon.csesiu.controller.EventController;
-import com.example.sujon.csesiu.model.EventModel;
+import com.example.sujon.csesiu.controller.Controller;
+import com.example.sujon.csesiu.model.DatatModel;
 
 import java.util.List;
 
@@ -26,10 +24,10 @@ public class EventAdapter extends BaseAdapter{
 
     private Activity activity;
     private LayoutInflater inflater;
-    private List<EventModel> eventItems;
-    ImageLoader imageLoader = EventController.getInstance().getImageLoader();
+    private List<DatatModel> eventItems;
+    ImageLoader imageLoader = Controller.getInstance().getImageLoader();
 
-    public EventAdapter(Activity activity, List<EventModel> eventItems) {
+    public EventAdapter(Activity activity, List<DatatModel> eventItems) {
         this.activity = activity;
         this.eventItems = eventItems;
     }
@@ -57,7 +55,7 @@ public class EventAdapter extends BaseAdapter{
         if (convertView == null)
             convertView = inflater.inflate(R.layout.event_list, null);
         if (imageLoader == null)
-            imageLoader = EventController.getInstance().getImageLoader();
+            imageLoader = Controller.getInstance().getImageLoader();
             NetworkImageView eventImg = (NetworkImageView) convertView
                     .findViewById(R.id.event_img);
             TextView eventTitle = (TextView) convertView.findViewById(R.id.event_title);
@@ -65,7 +63,7 @@ public class EventAdapter extends BaseAdapter{
             TextView eventDate = (TextView) convertView.findViewById(R.id.event_date);
 
             // getting movie data for the row
-            EventModel em = eventItems.get(position);
+            DatatModel em = eventItems.get(position);
 
             eventImg.setImageUrl(em.getEventImgUrl(), imageLoader);
             eventTitle.setText(em.getEventTitle());

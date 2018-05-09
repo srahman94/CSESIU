@@ -3,9 +3,10 @@
     package="com.example.sujon.csesiu">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".controller.EventController"
+        android:name=".controller.Controller"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,9 +25,20 @@
         </activity>
         <activity android:name=".activityes.Notice" />
         <activity android:name=".activityes.Gallery" />
-        <activity android:name=".activityes.FullImageActivity" />
+        <activity android:name=".activityes.ImageActivity" />
         <activity android:name=".activityes.Event" />
-        <activity android:name=".activityes.Blog"></activity>
+        <activity android:name=".activityes.Blog" />
+        <activity android:name=".activityes.Members" />
+        <activity android:name=".activityes.NewsfeedDetails" />
+        <activity android:name=".activityes.Result" />
+        <activity android:name=".activityes.Routine" />
+        <activity android:name=".activityes.Login" />
+        <activity android:name=".activityes.BlogDetails" />
+        <activity android:name=".activityes.NoticeDetails" />
+        <activity android:name=".activityes.EventDetails" />
+        <activity android:name=".activityes.StudentDetails" />
+        <activity android:name=".activityes.TeachersDetails" />
+        <activity android:name=".activityes.ViewProfile"></activity>
     </application>
 
 </manifest>

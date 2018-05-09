@@ -2,38 +2,38 @@ package com.example.sujon.csesiu.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.sujon.csesiu.R;
-import com.example.sujon.csesiu.controller.EventController;
-import com.example.sujon.csesiu.model.EventModel;
+import com.example.sujon.csesiu.controller.Controller;
+import com.example.sujon.csesiu.model.DatatModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by SuJoN on 4/10/2018.
  */
 
-public class HomePageListAdapter extends BaseAdapter {
-
+public class HomePageListAdapter extends BaseAdapter{
     private Activity activity;
     private LayoutInflater inflater;
-    private List<EventModel> newsfeedItems;
-    ImageLoader imageLoader = EventController.getInstance().getImageLoader();
+    private ArrayList<DatatModel> newsfeedItems;
+    private ImageLoader imageLoader = Controller.getInstance().getImageLoader();
+    private Context context;
 
-    public HomePageListAdapter(Activity activity, List<EventModel> newsfeedItems) {
+    public HomePageListAdapter(Activity activity, ArrayList<DatatModel> newsfeedItems) {
         this.activity = activity;
         this.newsfeedItems = newsfeedItems;
+    }
+
+    public HomePageListAdapter(Context context) {
+        this.context = context;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class HomePageListAdapter extends BaseAdapter {
         if (convertView == null)
             convertView = inflater.inflate(R.layout.event_list, null);
         if (imageLoader == null)
-            imageLoader = EventController.getInstance().getImageLoader();
+            imageLoader = Controller.getInstance().getImageLoader();
         NetworkImageView eventImg = (NetworkImageView) convertView
                 .findViewById(R.id.event_img);
         TextView eventTitle = (TextView) convertView.findViewById(R.id.event_title);
@@ -68,7 +68,7 @@ public class HomePageListAdapter extends BaseAdapter {
         TextView eventDate = (TextView) convertView.findViewById(R.id.event_date);
 
         // getting movie data for the row
-        EventModel em = newsfeedItems.get(position);
+        DatatModel em = newsfeedItems.get(position);
 
         eventImg.setImageUrl(em.getEventImgUrl(), imageLoader);
         eventTitle.setText(em.getEventTitle());
@@ -79,7 +79,79 @@ public class HomePageListAdapter extends BaseAdapter {
     }
 
 }
+//recyclerview
+/*
+private Context mContext;
+    private ArrayList<DatatModel> newsfeedItem;
+    private OnItemClickListener mListener;
 
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+    public HomePageListAdapter(Context context, ArrayList<DatatModel> newsfeedItem) {
+        mContext = context;
+        this.newsfeedItem = newsfeedItem;
+    }
+
+    @Override
+    public HomePageListAdapter.HomePageViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.event_list, parent, false);
+        return new HomePageViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(HomePageListAdapter.HomePageViewHolder holder, int position) {
+        DatatModel currentItem = newsfeedItem.get(position);
+
+        String imageUrl = currentItem.getEventImgUrl();
+        String title = currentItem.getEventTitle();
+        String desc = currentItem.getEventDesc();
+        int date = currentItem.getDate();
+
+        holder.eventaTitle.setText(title);
+        holder.eventaDesc.setText(desc);
+        holder.eventaDate.setText(date);
+        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.eventaImg);
+    }
+
+    @Override
+    public int getItemCount() {
+        return newsfeedItem.size();
+    }
+
+    public class HomePageViewHolder extends RecyclerView.ViewHolder{
+        public ImageView eventaImg;
+        public TextView eventaTitle;
+        public TextView eventaDesc;
+        public TextView eventaDate;
+
+        public HomePageViewHolder(View itemView) {
+            super(itemView);
+            eventaImg = itemView.findViewById(R.id.event_img);
+            eventaTitle = itemView.findViewById(R.id.event_title);
+            eventaDesc = itemView.findViewById(R.id.event_desc);
+            eventaDate = itemView.findViewById(R.id.event_date);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+        }
+    }
+*/
+//end
 /*ArrayAdapter<String> {
 
     private final Activity context;

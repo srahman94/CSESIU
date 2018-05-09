@@ -13,14 +13,14 @@ import com.example.sujon.csesiu.util.EventBitmapCache;
  * Created by SuJoN on 4/20/2018.
  */
 
-public class EventController extends Application {
+public class Controller extends Application {
 
-    public static final String TAG = EventController.class.getSimpleName();
+    public static final String TAG = Controller.class.getSimpleName();
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
 
-    private static EventController mInstance;
+    private static Controller mInstance;
 
     @Override
     public void onCreate() {
@@ -28,7 +28,7 @@ public class EventController extends Application {
         mInstance = this;
     }
 
-    public static synchronized EventController getInstance() {
+    public static synchronized Controller getInstance() {
         return mInstance;
     }
 

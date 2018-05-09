@@ -4,20 +4,36 @@ package com.example.sujon.csesiu.model;
  * Created by SuJoN on 4/20/2018.
  */
 
-public class EventModel {
-    private String eventTitle, eventDesc, eventImgUrl;
-    private int date;
+public class DatatModel {
+    private String eventTitle, eventDesc, eventImgUrl, mail;
+    private int date, mobile;
 
-    public EventModel() {
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public int getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(int mobile) {
+        this.mobile = mobile;
+    }
+
+    public DatatModel() {
 
     }
 
-    public EventModel(String eventTitle, String eventDesc, String eventImgUrl, int date) {
+    /*public DatatModel(String eventTitle, String eventDesc, String eventImgUrl, int date) {
         this.eventTitle = eventTitle;
         this.eventDesc = eventDesc;
         this.eventImgUrl = eventImgUrl;
         this.date = date;
-    }
+    }*/
 
     public String getEventTitle() {
         return eventTitle;

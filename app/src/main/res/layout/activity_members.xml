@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/members_ll"
+    android:orientation="vertical"
+    tools:context="com.example.sujon.csesiu.activityes.Members">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/members_tl"
+        android:layout_width="match_parent"
+        app:title="Member"
+        android:background="?attr/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:tabMode="fixed">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white" />
+
+</LinearLayout>
+
+<!--<TabHost-->
+<!--android:id="@+id/tabHost"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:layout_alignParentTop="true"-->
+<!--android:layout_centerHorizontal="true">-->
+
+<!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TabWidget-->
+        <!--android:id="@android:id/tabs"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+    <!--</TabWidget>-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@android:id/tabcontent"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/tab_student"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ListView-->
+                <!--android:id="@+id/student_list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:dividerHeight="10dp">-->
+
+            <!--</ListView>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/tab_teacher"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ListView-->
+                <!--android:id="@+id/teacher_list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:dividerHeight="10dp">-->
+
+            <!--</ListView>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/tab_alumni"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<ListView-->
+                <!--android:id="@+id/alumni_list"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:dividerHeight="10dp">-->
+
+            <!--</ListView>-->
+        <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
+<!--</LinearLayout>-->
+<!--</TabHost>-->
+
+<!--<LinearLayout-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:orientation="horizontal"-->
+<!--android:background="@color/colorPrimary"-->
+<!--android:weightSum="3">-->
+
+<!--<Button-->
+    <!--android:id="@+id/student"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:textColor="#fff"-->
+    <!--android:text="Student"-->
+    <!--android:layout_weight="1"/>-->
+
+<!--<Button-->
+    <!--android:id="@+id/teachers"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:textColor="#fff"-->
+    <!--android:text="Teachers"-->
+    <!--android:layout_weight="1"/>-->
+
+<!--<Button-->
+    <!--android:id="@+id/alumni"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:textColor="#fff"-->
+    <!--android:text="Alumni"-->
+    <!--android:layout_weight="1"/>-->
+<!--</LinearLayout>-->

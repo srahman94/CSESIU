@@ -5,17 +5,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.sujon.csesiu.R;
-import com.example.sujon.csesiu.controller.EventController;
-import com.example.sujon.csesiu.fragment.Notice_Frag;
-import com.example.sujon.csesiu.model.EventModel;
+import com.example.sujon.csesiu.controller.Controller;
+import com.example.sujon.csesiu.model.DatatModel;
 
 import java.util.List;
 
@@ -26,10 +23,10 @@ import java.util.List;
 public class NoticeAdapter extends BaseAdapter{
     private Activity activity;
     private LayoutInflater inflater;
-    private List<EventModel> noticeItems;
-    ImageLoader imageLoader = EventController.getInstance().getImageLoader();
+    private List<DatatModel> noticeItems;
+    ImageLoader imageLoader = Controller.getInstance().getImageLoader();
 
-    public NoticeAdapter(Activity activity, List<EventModel> noticeItems) {
+    public NoticeAdapter(Activity activity, List<DatatModel> noticeItems) {
         this.activity = activity;
         this.noticeItems = noticeItems;
     }
@@ -58,7 +55,7 @@ public class NoticeAdapter extends BaseAdapter{
         if (convertView == null)
             convertView = inflater.inflate(R.layout.notice_list, null);
         if (imageLoader == null)
-            imageLoader = EventController.getInstance().getImageLoader();
+            imageLoader = Controller.getInstance().getImageLoader();
             NetworkImageView noticeImg = (NetworkImageView) convertView
                     .findViewById(R.id.notice_img);
             TextView noticeTitle = (TextView) convertView.findViewById(R.id.notice_title);
@@ -66,7 +63,7 @@ public class NoticeAdapter extends BaseAdapter{
             TextView noticeDate = (TextView) convertView.findViewById(R.id.notice_date);
 
             // getting movie data for the row
-            EventModel em = noticeItems.get(position);
+            DatatModel em = noticeItems.get(position);
 
             noticeImg.setImageUrl(em.getEventImgUrl(), imageLoader);
             noticeTitle.setText(em.getEventTitle());
